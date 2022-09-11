@@ -63,7 +63,9 @@ function deleteBook(holder, aryay){
   // console.log(arr[4]);
   // console.log(arr)
   const arr2 = arr[4]
-delete myLibrary[arr2]
+  try{
+delete myLibrary[arr2]}
+catch{console.error();}
 
   // const arr2 = myLibrary.splice(arr[4], 1); 
 alert(myLibrary);
