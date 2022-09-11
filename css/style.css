@@ -1,0 +1,71 @@
+/* Box Model Hack */
+* {
+     box-sizing: border-box;
+     font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* Clear fix hack */
+ .clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+} 
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body { height: 100%;
+
+}
+div{
+  border: solid 0.10em
+}
+.grid-container{
+  display: grid;
+  height: 1200px
+  
+}
+.item1 {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start:1;
+  grid-row-end:8;
+  background: green;
+  
+  
+}
+
+.item2{
+  grid-column-start:5;
+  grid-column-end:9;
+  grid-row-start:1;
+  grid-row-end:3;
+}
+.item3{
+  grid-column-start:5;
+  grid-column-end: 7;
+  grid-row-start: 3;
+  grid-row-end: 5;
+ 
+  
+}
+.item4{
+  grid-column-start:7;
+  grid-column-end:9;
+  grid-row-start:3;
+  grid-row-end:5
+}
+.item5{
+  grid-column-start: 5;
+  grid-column-end: 9;
+  grid-row-start:5;
+  grid-row-end: 8
+}
