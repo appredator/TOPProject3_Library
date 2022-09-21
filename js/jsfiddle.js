@@ -4,10 +4,10 @@ const myLibrary = [];
 document.getElementById("showBooks").addEventListener('click', showBooks)
 document.getElementById("addBooks").addEventListener('click', addBookToLibrary)
 const book0Att = document.getElementById("book0Name").id
-document.getElementById("deleteBook0").addEventListener('click', deleteBook(book0Att, myLibrary))
+document.getElementById("deleteBook0").addEventListener('click', deleteBook0)
 
-document.getElementById("deleteBook1").addEventListener('click', deleteBook)
-
+document.getElementById("deleteBook1").addEventListener('click', deleteBook1)
+document.getElementById("changeReadStatusBook0").addEventListener('click', changeReadStatusBook0)
 //Class and Object Code
 function Book(name,pages,read){
   this.name = name;
@@ -33,6 +33,10 @@ let pagesVar= "book" + i + "Pages"
 let readVar = "book" + i + "Read";
 //Use variable string values to reference DOM elements by ID
 //Set Element text to Book Values from myLibrary Array
+document.getElementById(nameVar).innerText = "";
+document.getElementById(pagesVar).innerText = "";
+document.getElementById(readVar).innerText = "";
+
   document.getElementById(nameVar).innerText = myLibrary[i].name;
   document.getElementById(pagesVar).innerText = myLibrary[i].pages;
   document.getElementById(readVar).innerText = myLibrary[i].read;
@@ -51,7 +55,42 @@ var holder = new Book(bookName, bookPages, bookRead);
 
 myLibrary.push(holder);
 }
+function deleteBook0(){
+  const holder0 = myLibrary.splice(0, 1)
+  
+  showBooks();
+  
+  return console.log(myLibrary[0])
+  
+  }
 
+  function deleteBook1(){
+    const holder1 = myLibrary.splice(1, 1)
+    
+    showBooks();
+    
+    return console.log(myLibrary[1])
+    
+    }
+    function changeReadStatusBook0(){
+      console.log("BAHABHAB")
+if(myLibrary[0].read == "Yes"){
+  let bookName = "No";
+      myLibrary[0].read === "No"
+      // document.getElementById("book0Readd").setAttribute(book0Readd, "No");
+  
+      document.getElementById("book0Readd").value = "No"
+      document.getElementById("book0Readd").value = bookName
+      showBooks();
+      console.log(myLibrary[0].read)
+    }
+      else if(myLibrary[0].read === "No"){
+        myLibrary[0].read === "Yes"
+      document.getElementById("book0Read").innerText = myLibrary[0].read
+      document.getElementById("book0Read").value = "Yes"
+      showBooks();
+      }
+    }
 // Delete function uses the 5th character of 
 // the book to be deleted's ID to splice out the correct book from
 // the myLibrary array
