@@ -72,24 +72,27 @@ function deleteBook0(){
     return console.log(myLibrary[1])
     
     }
+
+
+    
     function changeReadStatusBook0(){
-      console.log("BAHABHAB")
-if(myLibrary[0].read == "Yes"){
-  let bookName = "No";
-      myLibrary[0].read === "No"
-      // document.getElementById("book0Readd").setAttribute(book0Readd, "No");
-  
-      document.getElementById("book0Readd").value = "No"
-      document.getElementById("book0Readd").value = bookName
-      showBooks();
-      console.log(myLibrary[0].read)
-    }
-      else if(myLibrary[0].read === "No"){
-        myLibrary[0].read === "Yes"
-      document.getElementById("book0Read").innerText = myLibrary[0].read
-      document.getElementById("book0Read").value = "Yes"
+      console.log("Change Read Status executed")
+      if(myLibrary[0].read === "Yes")
+      {
+      
+      myLibrary[0].read = "No"
+      console.log("Change Read Status to no executed")
       showBooks();
       }
+      else if(myLibrary[0].read === "No")
+      {
+      
+      myLibrary[0].read = "Yes"
+      console.log("Change Read Status to yes executed")
+      showBooks();
+      }
+      
+      
     }
 // Delete function uses the 5th character of 
 // the book to be deleted's ID to splice out the correct book from
